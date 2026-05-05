@@ -81,9 +81,11 @@ body{background:var(--ink);color:var(--white);font-family:var(--sans);font-weigh
 .nav-links a:hover,.nav-links button:hover,.nl-active{color:var(--gold-light) !important}
 .nav-cta{background:var(--pink) !important;color:#fff !important;padding:.5rem 1.4rem !important;border-radius:2px !important;font-weight:700 !important;transition:all .3s !important;font-size:.78rem !important}
 .nav-cta:hover{background:var(--gold) !important;color:var(--ink) !important}
+.nav-actions{display:flex;align-items:center;gap:1.5rem}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:all .3s}
 @media(max-width:700px){
+  .desktop-only{display:none !important}
   .hamburger{display:flex}
   .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(7,7,10,.98);flex-direction:column;padding:1.5rem;gap:1rem;transform:translateY(-110%);transition:transform .38s ease;border-bottom:1px solid rgba(200,168,75,.15);max-height:calc(100vh - 72px);overflow-y:auto;z-index:998}
   .nav-links.open{transform:translateY(0)}
@@ -91,6 +93,7 @@ body{background:var(--ink);color:var(--white);font-family:var(--sans);font-weigh
   .nav-links li{width:100%}
   .nav-links button{display:block;width:100%;text-align:left;padding:.6rem 0;font-size:.75rem}
   .nav-cta{display:block;width:100%;text-align:center;padding:.8rem 1rem !important;margin-top:1rem;border-radius:2px !important;font-size:.75rem !important;font-weight:700}
+  .nav > .nav-cta { display: none; }
 }
 
 /* HERO */
@@ -271,11 +274,14 @@ function Navbar({ page, setPage }: { page: Page; setPage: (p: Page) => void }) {
         <span className="logo-sub">Fort Worth · Texas</span>
       </button>
 
-      <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
-        <span style={{ transform: open ? "rotate(45deg) translate(5px,5px)" : "" }} />
-        <span style={{ opacity: open ? 0 : 1 }} />
-        <span style={{ transform: open ? "rotate(-45deg) translate(5px,-5px)" : "" }} />
-      </button>
+      <div className="nav-actions">
+        <a href={PHONE_HREF} className="nav-cta desktop-only">Call Now</a>
+        <button className="hamburger" onClick={() => setOpen(!open)} aria-label="Menu">
+          <span style={{ transform: open ? "rotate(45deg) translate(5px,5px)" : "" }} />
+          <span style={{ opacity: open ? 0 : 1 }} />
+          <span style={{ transform: open ? "rotate(-45deg) translate(5px,-5px)" : "" }} />
+        </button>
+      </div>
 
       <ul className={`nav-links${open ? " open" : ""}`}>
         {(["home","services","contact"] as Page[]).map(p => (
