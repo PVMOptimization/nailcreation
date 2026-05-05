@@ -71,9 +71,9 @@ body{background:var(--ink);color:var(--white);font-family:var(--sans);font-weigh
 ::-webkit-scrollbar-thumb{background:var(--pink);border-radius:3px}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 3.5rem;height:72px;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease}
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;padding:0 3.5rem;height:88px;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease}
 .nav.sc{background:rgba(7,7,10,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(200,168,75,.16)}
-.logo{cursor:pointer;line-height:1;user-select:none;background:none;border:none}
+.logo{cursor:pointer;line-height:1;user-select:none;background:none;border:none;position:relative;z-index:1001}
 .logo-s{font-family:var(--script);font-size:2rem;color:var(--gold-light);display:block;line-height:1}
 .logo-sub{font-size:.5rem;letter-spacing:.45em;text-transform:uppercase;color:var(--pink-mid);display:block;margin-top:-2px}
 .nav-links{display:flex;gap:2.5rem;list-style:none;align-items:center}
@@ -87,9 +87,9 @@ body{background:var(--ink);color:var(--white);font-family:var(--sans);font-weigh
 @media(max-width:700px){
   .desktop-only{display:none !important}
   .hamburger{display:flex}
-  .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(7,7,10,.98);flex-direction:column;padding:1.5rem;gap:1rem;transform:translateY(-110%);transition:transform .38s ease;border-bottom:1px solid rgba(200,168,75,.15);max-height:calc(100vh - 72px);overflow-y:auto;z-index:998}
+  .nav-links{position:fixed;top:88px;left:0;right:0;background:rgba(7,7,10,.98);flex-direction:column;padding:1.5rem;gap:1rem;transform:translateY(-110%);transition:transform .38s ease;border-bottom:1px solid rgba(200,168,75,.15);max-height:calc(100vh - 88px);overflow-y:auto;z-index:998}
   .nav-links.open{transform:translateY(0)}
-  .nav{padding:0 1.5rem}
+  .nav{padding:0 1.5rem;height:96px}
   .nav-links li{width:100%}
   .nav-links button{display:block;width:100%;text-align:left;padding:.6rem 0;font-size:.75rem}
   .nav-links .nav-cta { display: none !important; }
