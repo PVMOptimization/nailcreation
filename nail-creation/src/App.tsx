@@ -85,7 +85,14 @@ body{background:var(--ink);color:var(--white);font-family:var(--sans);font-weigh
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:var(--white);transition:all .3s}
 @media(max-width:700px){
-  .nav{display:none !important}
+  .desktop-only{display:none !important}
+  .hamburger{display:flex}
+  .nav-links{position:fixed;top:72px;left:0;right:0;background:rgba(7,7,10,.98);flex-direction:column;padding:1.5rem;gap:1rem;transform:translateY(-110%);transition:transform .38s ease;border-bottom:1px solid rgba(200,168,75,.15);max-height:calc(100vh - 72px);overflow-y:auto;z-index:998}
+  .nav-links.open{transform:translateY(0)}
+  .nav{padding:0 1.5rem}
+  .nav-links li{width:100%}
+  .nav-links button{display:block;width:100%;text-align:left;padding:.6rem 0;font-size:.75rem}
+  .nav-links .nav-cta { display: none !important; }
 }
 
 /* HERO */
